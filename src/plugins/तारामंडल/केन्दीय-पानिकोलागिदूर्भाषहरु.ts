@@ -69,22 +69,20 @@ export default class ग्राहक {
       [उचाई_स्तम्भ_पहिचान]: उचाई,
     };
 
-    await this.तारामंडल.tableaux!.ajouterÉlément(तालिका_पहिचान, नयाँ);
+    await this.तारामंडल.sfip!.pin.add(चित्र_पहिचान)
 
+    await this.तारामंडल.tableaux!.ajouterÉlément(तालिका_पहिचान, नयाँ);
   }
 
   async डाता_मेटाउनुहोस्(रेखा: string): Promise<void> {
     const तालिका_पहिचान = await client.uneFois(
-      async (फ: client.schémaFonctionSuivi<string|undefined>) => {
-        return await this.तालिका_पहिचान_पछ्याउनुहोस(फ)
+      async (फ: client.schémaFonctionSuivi<string | undefined>) => {
+        return await this.तालिका_पहिचान_पछ्याउनुहोस(फ);
       }
-    )
+    );
     if (तालिका_पहिचान) {
-      await this.तारामंडल.tableaux!.effacerÉlément(
-        तालिका_पहिचान, रेखा
-      )
+      await this.तारामंडल.tableaux!.effacerÉlément(तालिका_पहिचान, रेखा);
     }
-
   }
 
   async मारो_डाता_पछ्याउनुहोस्(

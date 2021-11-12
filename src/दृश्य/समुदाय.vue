@@ -4,7 +4,7 @@
       <v-col class="mb-4">
         <h1 class="display-2 font-weight-bold my-3">समुदाय डाताहरु</h1>
         <v-list>
-          <observation
+          <avalokan
             v-for="डाता in डाताहरु"
             :key="डाता.élément.empreinte"
             :data="डाता.élément"
@@ -20,7 +20,7 @@
           <v-btn
             outlined
             class="mt-2"
-            @click="$router.push({ path: '/मारोडाता' })"
+            @click="$router.push({ path: encodeURI('/मारोडाता') })"
           >
             मारो डाताहरु
           </v-btn>
@@ -33,8 +33,7 @@
 <script lang="ts">
 import mixins from "vue-typed-mixins";
 
-import dialogueNouvellesDonnées from "@/components/DialogueNouvellesDonnées.vue";
-import observation from "@/components/Observation.vue";
+import avalokan from "@/components/अवलोकन.vue";
 
 import mixinIPA from "@/mixins/तारामंडल";
 
@@ -43,7 +42,7 @@ import { S4W_डाता } from "@/plugins/तारामंडल/केन�
 
 export default mixins(mixinIPA).extend({
   name: "समुदाय",
-  components: { dialogueNouvellesDonnées, observation },
+  components: { avalokan },
   mixins: [mixinIPA],
   data: function () {
     return {

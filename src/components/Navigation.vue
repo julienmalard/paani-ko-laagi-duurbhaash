@@ -16,13 +16,13 @@
       <v-divider></v-divider>
 
       <v-list nav dense>
-        <v-list-item link @click="$router.push({ path: '/मारोडाता' })">
+        <v-list-item link @click="$router.push({ path: encodeURI('/मारोडाता') })">
           <v-list-item-icon>
             <v-icon>mdi-database</v-icon>
           </v-list-item-icon>
           <v-list-item-title>मारो डाताहरु</v-list-item-title>
         </v-list-item>
-        <v-list-item link @click="$router.push({ path: '/समुदाय' })">
+        <v-list-item link @click="$router.push({ path: encodeURI('/समुदाय') })">
           <v-list-item-icon>
             <v-icon>mdi-share-variant</v-icon>
           </v-list-item-icon>
@@ -34,7 +34,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Navigation"
+};
 </script>
 
 <style></style>

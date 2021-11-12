@@ -15,7 +15,7 @@
         <v-btn
           outlined
           class="mt-5"
-          @click="$router.push({ path: '/MesDonnées' })"
+          @click="$router.push({ path: encodeURI('/मारोडाता') })"
         >
           शुुरु गर्नुहोस्
         </v-btn>

@@ -1,28 +1,28 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import Home from "../views/Home.vue";
+import शुरु from "../दृश्य/शुरु.vue";
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
     path: "/",
-    name: "Accueil",
-    component: Home,
+    name: "शुरु",
+    component: शुरु,
   },
   {
-    path: "/मारोडाता",
+    path: encodeURI("/मारोडाता"),
     name: "मारोडाता",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/मारोडाता.vue"),
+      import(/* webpackChunkName: "about" */ "../दृश्य/मारोडाता.vue"),
   },
   {
-    path: "/समुदाय",
+    path: encodeURI("/समुदाय"),
     name: "समुदाय",
-    component: () => import("../views/समुदाय.vue"),
+    component: () => import("../दृश्य/समुदाय.vue"),
   },
 ];
 

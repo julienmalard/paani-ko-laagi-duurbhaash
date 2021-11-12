@@ -53,7 +53,7 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="secondary" text outlined @click="fermer">
+        <v-btn color="secondary" text outlined @click="()=>रद्द_गर्न()">
           रद्द गर्न
         </v-btn>
         <v-btn
@@ -75,7 +75,7 @@ import mixins from "vue-typed-mixins";
 import mixinIPA from "@/mixins/तारामंडल";
 
 export default mixins(mixinIPA).extend({
-  name: "dialogueNouvellesDonnées",
+  name: "नयाँ_डाता_को_खिड़की",
   data: function () {
     return {
       dialogue: false,
@@ -106,7 +106,7 @@ export default mixins(mixinIPA).extend({
         throw new Error("अपूर्ण डाता");
       }
 
-      await this.$तारामंडल.डाता_थप्नुहोस्(
+      await this.$ग्राहक.डाता_थप्नुहोस्(
         this.तालिका_पहिचान,
         new Date(),
         चित्र,
@@ -115,9 +115,9 @@ export default mixins(mixinIPA).extend({
         Number.parseFloat(देशान्तर),
         Number.parseFloat(उचाई)
       );
-      this.fermer();
+      this.रद्द_गर्न();
     },
-    fermer() {
+    रद्द_गर्न() {
       this.dialogue = false;
       this.चित्र = null;
       this.वर्षा = null;
@@ -129,7 +129,7 @@ export default mixins(mixinIPA).extend({
 
   mounted: async function () {
     const तालिका_पहिचानलाई_बिर्सनुहोस् =
-      await this.$तारामंडल.तालिका_पहिचान_पछ्याउनुहोस(
+      await this.$ग्राहक.तालिका_पहिचान_पछ्याउनुहोस(
         (तालिका_पहिचान?: string) => (this.तालिका_पहिचान = तालिका_पहिचान)
       );
     this.पछि_बिर्सनुहोस्(तालिका_पहिचानलाई_बिर्सनुहोस्);
