@@ -50,11 +50,13 @@
 </template>
 
 <script lang="ts">
+import Vue from "vue";
+
 import { உரைக்கு as संख्या } from "ennikkai";
 
 import chitrKoKhidki from "@/components/चित्र_को_खिड़की.vue";
 
-export default {
+export default Vue.extend({
   name: "अवलोकन",
   props: ["data", "maro", "yogdanakarta"],
   components: { chitrKoKhidki },
@@ -84,7 +86,7 @@ export default {
       await this.$ग्राहक.डाता_मेटाउनुहोस्(this.data.empreinte);
     },
   },
-};
+});
 </script>
 
 <style></style>
